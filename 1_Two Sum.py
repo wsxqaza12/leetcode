@@ -11,7 +11,17 @@ class Solution:
             if symmetry[i] == nums[i]:
                 duplicate_num = [i for i, v in enumerate(nums) if v == find]
                 if len(duplicate_num) > 1:
-                    return(duplicate_num)
+                    return (duplicate_num)
                 continue
             if find in nums:
-                return(i, nums.index(find))
+                return (i, nums.index(find))
+
+# Method 2
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            find_num = target - nums[i]
+            if (find_num in nums) and nums.index(find_num) != i:
+                return [i, nums.index(find_num)]
