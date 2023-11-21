@@ -25,3 +25,19 @@ class Solution:
             find_num = target - nums[i]
             if (find_num in nums) and nums.index(find_num) != i:
                 return [i, nums.index(find_num)]
+
+
+# One-pass Hash Table
+# Time complexity: O(N);
+# Space Complexity: O(N);
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        numIndex = {}
+
+        for i in range(len(nums)):
+            if target - nums[i] in numIndex:
+                return [numIndex[target - nums[i]], i]
+            else:
+                numIndex[nums[i]] = i
+
+        return False
