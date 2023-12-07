@@ -19,3 +19,20 @@ class Solution(object):
             curr += 1
 
         return nums
+
+#
+
+
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        no_zero = 0
+
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[i], nums[no_zero] = nums[no_zero], nums[i]
+                no_zero += 1
+
+        return nums
