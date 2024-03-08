@@ -8,17 +8,14 @@ class Solution:
                 counts[num] = 1
             else:
                 counts[num] += 1
-                max_num = max(max_num, counts[num])
+            max_num = max(max_num, counts[num])
 
-        if max_num == 0:
-            return len(nums)
-        else:
-            total = 0
-            for k ,v in counts.items():
-                if v == max_num:
-                    total += v
+
+        total = 0
+        for k ,v in counts.items():
+            if v == max_num:
+                total += v
             
-            return total
-
+        return total
         
         
